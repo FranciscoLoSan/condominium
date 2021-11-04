@@ -14,7 +14,13 @@ class CreateRecibosTable extends Migration
     public function up()
     {
         Schema::create('recibos', function (Blueprint $table) {
-            $table->id();
+            $table->integer('Folio')->primary();
+            $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('vivienda_num');
+            $table->foreign('vivienda_num')->references('numero')->on('viviendas');
+            $table->date('fecha_corte');
+            $table->double('monto');
             $table->timestamps();
         });
     }

@@ -19,6 +19,9 @@ class UsuariosTableSeeder extends Seeder
         $user->lastname = 'Administrador';
         $user->email    = 'admin@mail.com';
         $user->password = 'admin';
+        $user->telefono    = '3324237983';
+        $user->curp    = 'LOSF200101HJCPNR02';
+        $user->fecha_nacimiento    = '2000-01-01';
         $user->status   = 1; // (1) active (0)disabled
         $user->save();
 
@@ -32,6 +35,9 @@ class UsuariosTableSeeder extends Seeder
         $user->lastname = 'Usuarios';
         $user->email    = 'usuario@mail.com';
         $user->password = 'admin';
+        $user->telefono    = '3342329738';
+        $user->curp    = 'LOSF200101HJCPNR02';
+        $user->fecha_nacimiento    = '2000-01-01';
         $user->status   = 1; // (1) active (0)disabled
         $user->save();
 
