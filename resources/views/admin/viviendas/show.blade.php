@@ -22,21 +22,6 @@
       {{ $user->email }}
     </div>
     <div class="col-sm-3 invoice-col">
-      <strong>Correo electrónico</strong>
-      <br>
-      {{ $user->telefono }}
-    </div>
-    <div class="col-sm-3 invoice-col">
-      <strong>Correo electrónico</strong>
-      <br>
-      {{ $user->curp }}
-    </div>
-    <div class="col-sm-3 invoice-col">
-      <strong>Correo electrónico</strong>
-      <br>
-      {{ $user->fecha_nacimiento }}
-    </div>
-    <div class="col-sm-3 invoice-col">
       <strong>Estatus</strong><br>
       <span class="badge text-white {{ $user->status ? 'green' : 'red' }}">{{ $user->display_status }}</span>
     </div>

@@ -39,7 +39,7 @@ class PermissionController extends Controller
     public function show($id)
     {  
         
-        //$roles = Role::get();
+        $roles = Role::get();
         $role = Role::findByName($id);
         //dd($role);
         $name = $role->name;
