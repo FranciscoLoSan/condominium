@@ -13,15 +13,17 @@ class CreateViviendasTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('viviendas');
+
         Schema::create('viviendas', function (Blueprint $table) {
             $table->integer('numero')->primary();
             $table->string('domicilio');
             $table->text('decripcion');
             $table->double('latitud');
             $table->double('longitud');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();       
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('servicio_id');
+            $table->integer('servicio_id')->unsigned();
             $table->foreign('servicio_id')->references('id')->on('servicios');
             $table->timestamps();
         });
