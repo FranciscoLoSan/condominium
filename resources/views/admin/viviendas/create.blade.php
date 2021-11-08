@@ -48,50 +48,17 @@
             <input type="hidden" id="_url" value="{{ url('user') }}">
             <input type="hidden" id="_token" value="{{ csrf_token() }}">
             <div class="card-body">
-
-              <div class="form-group pading col-md-3 float-left">
+              <div class="form-group pading">
                 <label class="font-weight-bolder" for="name">Nombres</label>
                 <input class="form-control" style="font-size: 15px;" id="name" name="name" placeholder="Nombres">
                 <span class="missing_alert text-danger" id="name_alert"></span>
               </div>
-
-              <div class="form-group col-md-3 float-left">
+              <div class="form-group">
                 <label class="font-weight-bolder" for="last_name">Apellidos</label>
                 <input class="form-control" style="font-size: 15px;" id="last_name" name="lastname" placeholder="Apellidos">
                 <span class="missing_alert text-danger" id="last_name_alert"></span>
               </div>
-              
-              <div class="form-group col-md-3 float-left">
-                <label class="font-weight-bolder" for="email">Correo Electrónico</label>
-                <input class="form-control" style="font-size: 15px;" id="email" name="email" placeholder="Correo electrónico">
-                <span class="missing_alert text-danger" id="email_alert"></span>
-              </div>
-
-              <div class="form-group col-md-3 float-left">
-                <label class="font-weight-bolder" for="telefono">Teléfono</label>
-                <input class="form-control" style="font-size: 15px;" id="telefono" name="telefono" placeholder="Teléfono">
-                <span class="missing_alert text-danger" id="telefono"></span>
-              </div>
-
-              <div class="form-group col-md-3 float-left">
-                <label class="font-weight-bolder" for="curp">CURP</label>
-                <input class="form-control" style="font-size: 15px;" id="telefono" name="curp" placeholder="CURP">
-                <span class="missing_alert text-danger" id="curp"></span>
-              </div>
-
-              <div class="form-group pading col-md-3 float-left">
-                <label class="font-weight-bolder" for="username">Usuario</label>
-                <input class="form-control" style="font-size: 15px;" id="username" name="username" placeholder="Ingrese el usuario">
-                <span class="missing_alert text-danger" id="username_alert"></span>
-              </div>
-
-              <div class="form-group pading col-md-3 float-left">
-                <label class="font-weight-bolder" for="expedicion">Fecha nac.</label>
-                <input class="form-control" type="date" name="fecha_nacimiento" style="font-size: 15px;" id="fecha_nacimiento">
-                <span class="missing_alert text-danger" id="fecha_nacimiento"></span>
-              </div>
-
-              <div class="form-group col-md-3 float-left">
+               <div class="form-group">
                 <label class="font-weight-bolder" for="status">Género</label>
                 <div class="checkbox icheck">
                   <label class="font-weight-bolder">
@@ -100,8 +67,17 @@
                   </label>
                 </div>
               </div>
-
-              <div class="form-group col-md-4 float-left">
+              <div class="form-group pading">
+                <label class="font-weight-bolder" for="username">Usuario</label>
+                <input class="form-control" style="font-size: 15px;" id="username" name="username" placeholder="Ingrese el usuario">
+                <span class="missing_alert text-danger" id="username_alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bolder" for="email">Correo Electrónico</label>
+                <input class="form-control" style="font-size: 15px;" id="email" name="email" placeholder="Correo electrónico">
+                <span class="missing_alert text-danger" id="email_alert"></span>
+              </div>
+              <div class="form-group">
                 <label  for="role">Tipo de usuario</label>
                 <div class="checkbox icheck">
                   <label class="font-weight-bolder">
@@ -110,8 +86,17 @@
                   </label>
                 </div>
               </div>
-
-              <div class="form-group col-md-4 float-left">
+              <div class="form-group">
+                <label class="font-weight-bolder" for="password">Contraseña</label>
+                <input type="password" style="font-size: 15px;" class="form-control" id="password" name="password" placeholder="Contraseña">
+                <span class="missing_alert text-danger" id="password_alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bolder" for="password_confirmation">Confirmar Contraseña</label>
+                <input type="password" style="font-size: 15px;" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Contraseña">
+                <span class="missing_alert text-danger" id="password_confirmation_alert"></span>
+              </div>
+              <div class="form-group">
                 <label class="font-weight-bolder" for="status">Acceso al sistema</label>
                 <div class="checkbox icheck">
                   <label class="font-weight-bolder">
@@ -120,19 +105,6 @@
                   </label>
                 </div>
               </div>
-
-              <div class="form-group pading col-md-12 float-left">
-                <br>
-                <label class="font-weight-bolder" for="password">Contraseña</label>
-                <input type="password" style="font-size: 15px;" class="form-control" id="password" name="password" placeholder="Contraseña">
-                <span class="missing_alert text-danger" id="password_alert"></span>
-              </div>
-              <div class="form-group pading col-md-12 float-left">
-                <label class="font-weight-bolder" for="password_confirmation">Confirmar Contraseña</label>
-                <input type="password" style="font-size: 15px;" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Contraseña">
-                <span class="missing_alert text-danger" id="password_confirmation_alert"></span>
-              </div>
-              
             </div>
               <div class="">
                 <button type="submit" class="btn blue darken-4 text-white  ajax" id="submit">
