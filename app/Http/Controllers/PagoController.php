@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pago;
+use Illuminate\Support\Facades\Auth;
 
 class PagoController extends Controller
 {
@@ -18,7 +20,7 @@ class PagoController extends Controller
             $ticket="";
         }
 
-        Pago::insert(['user_id'=>Auth::id(),'estatus'=>3,'ticket'=>$ticket,'created_at'=>now()]);
+        Pago::insert(['user_id'=>Auth::id(),'ticket'=>$ticket,'created_at'=>now()]);
 
         return redirect('/');
     }

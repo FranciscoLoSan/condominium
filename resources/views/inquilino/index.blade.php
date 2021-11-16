@@ -35,7 +35,7 @@
 
         <div class="card ">
             <div class="card-header">
-                <h1>Recibo</h1>
+                <h1>Recibo</h1> 
             </div>
 
             <div class="card-body">
@@ -72,26 +72,17 @@
                 @endif
                 
                 <hr>
+                <h2>Foto del Ticket</h2>
                 @if ($pago)
-                    <h2>Foto del Ticket</h2>
-                    @switch($pago->estatus)
-                        @case(0)
-
-                            <div class="alert alert-warning d-flex align-items-center" role="alert">
-                                <div>
-                                    <i class="icon fas fa-exclamation-triangle"></i>Ya se ha enviado una foto. En caso de subir otra se eliminará la anterior.
-                                </div>
+                    @if ($pago->estatus==0)
+                        <div class="alert alert-warning d-flex align-items-center" role="alert">
+                            <div>
+                                <i class="icon fas fa-exclamation-triangle"></i>Ya se ha enviado una foto. En caso de subir otra se eliminará la anterior.
                             </div>
-                            @include('inquilino.partials.formTicket')
-                            @break
-                        @case(2)
-                            @include('inquilino.partials.formTicket')
-                            @break
-                    @endswitch
-                @else
-                    <h2>Foto del Ticket</h2>
-                    @include('inquilino.partials.formTicket')
+                        </div>
+                    @endif
                 @endif
+                @include('inquilino.partials.formTicket')
             </div>
        </div>
    </div>

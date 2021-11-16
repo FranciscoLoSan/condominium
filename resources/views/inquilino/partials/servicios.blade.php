@@ -7,7 +7,9 @@
         </tr>
     </thead>
     <tbody>
-        @php($total=0)
+        <?php
+            $total=0;
+        ?>
         @foreach ($servicios as $servicio)
         <tr>
             <td>{{$servicio->nombre}}</td>
