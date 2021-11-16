@@ -59,27 +59,14 @@
        </div>
    </div>
 </section>
-{{-- <script>
-    var myAlert = document.getElementById('btn-alert')
-    myAlert.addEventListener('closed.bs.alert', function () {
-        console.log('hola')
-    // do something, for instance, explicitly move focus to the most appropriate element,
-    // so it doesn't get lost/reset to the start of the page
-    // document.getElementById('..').focus()
-    })
-</script> --}}
 @endsection
 
 @push('scripts')
     <script>
-
         var myAlert = document.getElementById('btn-alert')
         myAlert.addEventListener('click', function () {
             console.log('hola')
             document.getElementById('alerta').style.display = 'none';
-        // do something, for instance, explicitly move focus to the most appropriate element,
-        // so it doesn't get lost/reset to the start of the page
-        // document.getElementById('..').focus()
         });
     </script>
 @endpush
