@@ -18,7 +18,7 @@ class PagoController extends Controller
             $ticket="";
         }
 
-        Pago::insert(['user_id'=>Auth::id(),'ticket'=>$ticket,'created_at'=>now()]);
+        Pago::insert(['user_id'=>Auth::id(),'estatus'=>3,'ticket'=>$ticket,'created_at'=>now()]);
 
         return redirect('/');
     }
