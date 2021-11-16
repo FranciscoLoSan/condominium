@@ -7,6 +7,10 @@ use App\Models\Log\LogSistema;
 use App\Models\User;
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Auth;
+use App\Servicio;
+use App\Helper;
+
 class HomeController extends Controller
 {
     /**
@@ -49,6 +53,16 @@ class HomeController extends Controller
         $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha ingresado al home del sistema a las: '
         . date('H:m:i').' del día: '.date('d/m/Y');
         $log->save();
+
+
+        if(Auth::user()->hasRole('Usuario')){
+            $numInquilinos = Helper::getInquilinos();
+            $fecha = now()->toDateString();
+            $year = substr($fecha,0,4);
+            $mes = substr($fecha,5,2);
+            $servicios = Servicio::select(['nombre','descripcion','costo'])->whereYear('created_at',$year)->whereMonth('created_at',$mes)->get();
+            return view('inquilino.index',['servicios'=>$servicios,'numInquilinos'=>$numInquilinos]);
+        }
 
         return view('admin.home.index', compact('emp_count_1',
                                                 'emp_count_2',

@@ -7,6 +7,7 @@ use Vinkla\Hashids\Facades\Hashids;
 
 class Servicio extends Model
 {
+<<<<<<< HEAD
     protected $table = 'servicios';
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
@@ -23,4 +24,9 @@ class Servicio extends Model
     {
         return Hashids::encode($this->id);
     }
+=======
+    protected $fillable = [
+        'nombre','descripcion','costo','created_at','updated_at',
+    ];
+>>>>>>> 484a92ca68f74cc58496104d99321a888fee4ff2
 }
