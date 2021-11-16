@@ -63,7 +63,6 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->display_name }}</td>
                     <td>{{ $user->username }}</td>
-               
                       
                        @if ($user->genero == 'F')
                       <td><i class="mdi mdi-human-female fa-3x pink-text"></i></td>

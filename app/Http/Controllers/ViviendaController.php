@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Log\LogSistema;
+use App\Models\User;
 use App\Vivienda as AppVivienda;
 
 class ViviendaController extends Controller
@@ -20,7 +21,7 @@ class ViviendaController extends Controller
 
         $vivienda = AppVivienda::get();
 
-        return view('admin.vivienda.index', ['vivienda' => $vivienda]);
+        return view('admin.viviendas.index', ['vivienda' => $vivienda]);
     }
 
 
@@ -35,8 +36,9 @@ class ViviendaController extends Controller
         $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha ingresado a registrar una vivienda a las: '
         . date('H:m:i').' del día: '.date('d/m/Y');
         $log->save();
+        $user = User::get();
 
-        return view('admin.vivienda.create');
+        return view('admin.viviendas.create', ['user' => $user]);
     }
 
 
@@ -48,11 +50,11 @@ class ViviendaController extends Controller
         $log = new LogSistema();
         
         $log->user_id = auth()->user()->id;
-        $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Se ha  registrado en el sistema la vivienda: '.$request->numero.' con domicilio: '.$request->domicilio.' a las: '
+        $log->tx_descripcion = 'La vivienda: '.$vivienda->numero.' '.$vivienda->domicilio.' Se ha  registrado en el sistema la vivienda: '.$vivienda->id.' con domicilio: '.$vivienda->numero.' a las: '
         . date('H:m:i').' del día: '.date('d/m/Y');
         $log->save();
 
-        return redirect()->route('admin.vivienda.index');
+        return redirect()->route('vivienda.index');
     }
 
 
@@ -60,16 +62,16 @@ class ViviendaController extends Controller
 
     public function show($id)
     {
-        $user = User::find(\Hashids::decode($id)[0]);
+        $vivienda = AppVivienda::find(\Hashids::decode($id)[0]);
 
          $log = new LogSistema();
         
          $log->user_id = auth()->user()->id;
-         $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha ingresado a ver los datos del usuario: '.$user->display_name.' a las: '
+         $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha ingresado a ver los datos de la vivienda: '.$vivienda->id.' a las: '
         . date('H:m:i').' del día: '.date('d/m/Y');
         $log->save();
 
-        return view('admin.usuarios.show', ['user' => $user]);
+        return view('admin.viviendas.show', ['vivienda' => $vivienda]);
     }
 
 
@@ -77,14 +79,14 @@ class ViviendaController extends Controller
 
     public function edit($id)
     {
-        $user = User::find(\Hashids::decode($id)[0]);
+        $vivienda = AppVivienda::find(\Hashids::decode($id)[0]);
 
         $log = new LogSistema();
         $log->user_id = auth()->user()->id;
-        $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha ingresado a editar los datos del usuario: '.$user->display_name.' a las: '
+        $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha ingresado a editar los datos de la vivienda: '.$vivienda->id.' a las: '
         . date('H:m:i').' del día: '.date('d/m/Y');
-        $log->save();
-        return view('admin.usuarios.edit', ['user' => $user]);
+        $user = User::get();
+        return view('admin.viviendas.edit', ['vivienda' => $vivienda], ['user' => $user]);
     }
 
 
@@ -92,22 +94,18 @@ class ViviendaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = User::find(\Hashids::decode($id)[0]);
+        $vivienda = AppVivienda::findOrFail(\Hashids::decode($id)[0]);
+        $vivienda->fill($request->all());
+        $vivienda->save();
         
-        $user->update($request->except('role'));
-
-        if ($request->has('role'))
-        {
-            $user->syncRoles($request->role);
-        }
-
          $log = new LogSistema();
         $log->user_id = auth()->user()->id;
-        $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha modificó los datos del usuario: '.$user->display_name.' a las: '
+        $log->tx_descripcion = 'El usuario: '.auth()->user()->display_name.' Ha modificó los datos de la vivienda: '.$vivienda->id.' a las: '
         . date('H:m:i').' del día: '.date('d/m/Y');
         $log->save();
 
-        return json_encode(['success' => true]);
+        return redirect()->route('vivienda.index');
+        
     }
 
 

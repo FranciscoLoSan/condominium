@@ -7,12 +7,12 @@ use Vinkla\Hashids\Facades\Hashids;
 
 class Servicio extends Model
 {
-    protected $table = 'viviendas';
-    protected $primaryKey = 'numero';
+    protected $table = 'servicios';
+    protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'numero', 'domicilio', 'descripcion', 'latitud', 'longitud', 'user_id', 'servicio_id'
+        'id', 'nombre', 'descripcion', 'costo','vivienda_id'
     ];
 
     protected $hidden = [];
@@ -21,6 +21,6 @@ class Servicio extends Model
 
     public function getEncodeIDAttribute()
     {
-        return Hashids::encode($this->numero);
+        return Hashids::encode($this->id);
     }
 }

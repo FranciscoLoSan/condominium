@@ -48,7 +48,7 @@
             <input type="hidden" id="_url" value="{{ url('user') }}">
             <input type="hidden" id="_token" value="{{ csrf_token() }}">
             <div class="card-body">
-
+              
               <div class="form-group pading col-md-3 float-left">
                 <label class="font-weight-bolder" for="name">Nombres</label>
                 <input class="form-control" style="font-size: 15px;" id="name" name="name" placeholder="Nombres">

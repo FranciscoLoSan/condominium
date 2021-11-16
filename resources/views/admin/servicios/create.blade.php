@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'Viviendas')
-@section('page_title', 'Vivienda')
-@section('page_subtitle', 'Ingresar')
+@section('title', 'Servicios')
+@section('page_title', 'Servicios')
+@section('page_subtitle', 'Registrar')
 @section('content')
 
   <section class="container">
@@ -10,10 +10,10 @@
       <div class="col-md-6">
         <div class="btn-group">
           @can('VerVivienda')
-          <a href="{{ url('vivienda') }}" class="btn blue darken-4 text-white "><i class="mdi mdi-sort-alphabetical-ascending"></i> Listado</a>
+          <a href="{{ url('servicion') }}" class="btn blue darken-4 text-white "><i class="mdi mdi-sort-alphabetical-ascending"></i> Listado</a>
           @endcan
           @can('RegistrarVivienda')
-          <a href="{{ url('vivienda/create') }}" class="btn blue darken-4 text-white "><i class="fa fa-plus-square"></i> Ingresar</a>
+          <a href="{{ url('servicio/create') }}" class="btn blue darken-4 text-white "><i class="fa fa-plus-square"></i> Ingresar</a>
           @endcan
         </div>
       </div>
@@ -23,7 +23,7 @@
       <div class="col-md-12">
         <div class="card card-line-primary">
           <div class="card-header  ">
-              <h5 >Crear Vivienda</h5>
+              <h5 >Crear Servicio</h5>
              
             </div>
           <div class="card-body">
@@ -40,39 +40,39 @@
                 </li>
                <li class="list-inline-item">
                   
-                    Nueva vivienda
+                    Nuevo servicio
                  </li>
              </ul><br>
           
          {{--}} <form role="form" id="main-form" autocomplete="off">
             <input type="hidden" id="_url" value="{{ url('vivienda') }}">
             <input type="hidden" id="_token" value="{{ csrf_token() }}"> --}}
-            <form action="{{ url('/vivienda/') }}" method="POST" role="form" id="main-form">
+            <form action="{{ url('/servicio/') }}" method="POST" role="form" id="main-form">
               @csrf
             <div class="card-body">
               <div class="form-group">
-                <label for="exampleFormControlSelect1">Asignar inquilino</label>
-                <select class="form-control" id="user_id" name="user_id">
-                @foreach ($user as $userData)
-                  <option value="{{ $userData->id }}">{{ $userData->name}} {{$userData->lastname}}</option>
+                <label for="exampleFormControlSelect1">Asignar vivienda</label>
+                <select class="form-control" id="vivienda_id" name="vivienda_id">
+                @foreach ($vivienda as $viviendaData)
+                  <option value="{{ $viviendaData->id }}">{{ $viviendaData->numero}} {{$viviendaData->domicilio}}</option>
                 @endforeach
                 </select>
               </div>
 
               <div class="form-group pading">
-                <label class="font-weight-bolder" for="numero">Numero</label>
-                <input class="form-control" style="font-size: 15px;" id="numero" name="numero" placeholder="Numero">
+                <label class="font-weight-bolder" for="numero">Nombre</label>
+                <input class="form-control" style="font-size: 15px;" id="nombre" name="nombre" placeholder="Nombre">
                 <span class="missing_alert text-danger" id="numero_alert"></span>
               </div>
               <div class="form-group">
-                <label class="font-weight-bolder" for="domicilio">Domicilio</label>
-                <input class="form-control" style="font-size: 15px;" id="domicilio" name="domicilio" placeholder="Domicilio">
+                <label class="font-weight-bolder" for="domicilio">Descripcion</label>
+                <input class="form-control" style="font-size: 15px;" id="descripcion" name="descripcion" placeholder="Descripcion">
                 <span class="missing_alert text-danger" id="last_name_alert"></span>
               </div>
             
               <div class="form-group pading">
-                <label class="font-weight-bolder" for="descripcion">Descripcion</label>
-                <input class="form-control" style="font-size: 15px;" id="descripcion" name="descripcion" placeholder="Descripcion">
+                <label class="font-weight-bolder" for="descripcion">Costo</label>
+                <input class="form-control" style="font-size: 15px;" id="costo" name="costo" placeholder="Costo">
                 <span class="missing_alert text-danger" id="last_name_alert"></span>
               </div>
               

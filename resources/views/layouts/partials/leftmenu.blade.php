@@ -99,6 +99,22 @@
             </a>
           </li>
           @endcan
+            @can('VerVivienda')
+          <li class="nav-item">
+            <a href="/vivienda" class="nav-link">
+              <i class="mdi mdi-light-switch nav-icon red-text"></i>
+              <p>Viviendas</p>
+            </a>
+          </li>
+          @endcan
+          @can('VerVivienda')
+          <li class="nav-item">
+            <a href="/servicio" class="nav-link">
+              <i class="mdi mdi-light-switch nav-icon red-text"></i>
+              <p>Servicios</p>
+            </a>
+          </li>
+          @endcan
         </ul>
       </li>
        @if (auth()->user()->hasRole('Usuario') )

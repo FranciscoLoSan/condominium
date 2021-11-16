@@ -42,7 +42,17 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                 'EditarRole',
                                 'EliminarRole',
 
-                               
+                               /* Viviendas */
+                               'VerVivienda',
+                               'RegistrarVivienda',
+                               'EditarVivienda',
+                               'EliminarVivienda',
+
+                               /* Servicios */
+                               'VerServicio',
+                               'RegistrarServicio',
+                               'EditarServicio',
+                               'EliminarServicio',
 
 
                               ];

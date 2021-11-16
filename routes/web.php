@@ -23,5 +23,6 @@ Route::middleware(['auth',])->group(function () {
   Route::resource('permission', 'PermissionController');
   Route::get('logs', 'HomeController@logs')->name('logs');
   Route::resource('roles',   'RolesController');
-
+  Route::resource('vivienda', 'ViviendaController');
+  Route::resource('servicio', 'ServicioController');
 });

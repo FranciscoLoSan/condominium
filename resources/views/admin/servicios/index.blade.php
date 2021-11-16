@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Viviendas')
-@section('page_title', 'Viviendas')
+@section('title', 'Servicios')
+@section('page_title', 'Servicios')
 
 
 
@@ -12,8 +12,8 @@
         <div class="col-md-6">
           <div class="btn-group">
            
-           @can('RegistrarVivienda')
-            <a href="{{ url('vivienda/create') }}" class="btn blue darken-3 text-white "><i class="fa fa-plus-square"></i> Ingresar</a>  
+           @can('RegistrarServicio')
+            <a href="{{ url('servicio/create') }}" class="btn blue darken-3 text-white "><i class="fa fa-plus-square"></i> Ingresar</a>  
            @endcan
           </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="col-md-12">
           <div class="card card-line-primary">
             <div class="card-header">
-              <h5 >Listado de viviendas</h5>
+              <h5 >Listado de servicios</h5>
              
             </div>
              <!-- /.card-header -->
@@ -34,12 +34,12 @@
                       </a>
                     </li>
                    <li class="list-inline-item">
-                      <a href="/vivienda" class="link_ruta">
+                      <a href="/servicio" class="link_ruta">
                         Listado &nbsp; &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
                       </a>
                     </li>
                    <li class="list-inline-item">
-                      <a href="/vivienda/create" class="link_ruta">
+                      <a href="/servicio/create" class="link_ruta">
                         Nuevo
                       </a>
                     </li>
@@ -47,23 +47,23 @@
                 <table  class="display table table-striped " style="width:100%">
                     <thead>
                     <tr>
-                    <th>Numero</th>
-                    <th>Domicilio</th>
-                    <th>Descripcion</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Costo</th>
                     <th>Opciones</th> 
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($vivienda as $viviendaData)
-                    <td>{{ $viviendaData->numero }}</td>
-                    <td>{{ $viviendaData->domicilio}}</td>
-                    <td>{{ $viviendaData->descripcion }}</td>
+                    @foreach ($servicio as $servicioData)
+                    <td>{{ $servicioData->nombre }}</td>
+                    <td>{{ $servicioData->descripcion}}</td>
+                    <td>{{ $servicioData->costo }}</td>
                     <td>
-                       @can('VerVivienda')
-                       <a class="btn btn-round blue darken-4" href="{{ url('vivienda', [$viviendaData->encode_id]) }}"><i class="mdi mdi-face text-center" style="color: white;"></i> </a>
+                       @can('VerServicio')
+                       <a class="btn btn-round blue darken-4" href="{{ url('servicio', [$servicioData->encode_id]) }}"><i class="mdi mdi-face text-center" style="color: white;"></i> </a>
                        @endcan
-                      @can('EditarVivienda')
-                       <a class="btn btn-round blue darken-4" href="{{ url('vivienda', [$viviendaData->encode_id,'edit']) }}"><i class="mdi mdi-pencil text-center" style="color: white;"></i> </a>
+                      @can('EditarServicio')
+                       <a class="btn btn-round blue darken-4" href="{{ url('servicio', [$servicioData->encode_id,'edit']) }}"><i class="mdi mdi-pencil text-center" style="color: white;"></i> </a>
                      @endcan
                     </td>
                     </tr>

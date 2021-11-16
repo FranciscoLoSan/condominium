@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Http\Requests\StoreUser;
 use App\Http\Requests\UpdateUser;
 use App\Models\Log\LogSistema;
+
 class UserController extends Controller
 {
      public function __construct()
