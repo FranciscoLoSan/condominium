@@ -9,14 +9,17 @@
     <tbody>
         <?php
             $total=0;
+            
         ?>
         @foreach ($servicios as $servicio)
         <tr>
             <td>{{$servicio->nombre}}</td>
             <td>{{$servicio->descripcion}}</td>
+
             <td>${{$costo = number_format(($servicio->costo)/$numInquilinos,2)}}</td>
+
             <?php
-                $total += $costo;
+                $total=($servicio->costo)/$numInquilinos;
             ?>
         </tr>
         @endforeach
