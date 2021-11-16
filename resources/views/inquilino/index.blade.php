@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('title', 'Inicio')
 @section('content')
+{{-- HOLA COMO ESTAMOS --}}
 <section class="container">
     <div class="col-sm-12">
         <div class="card ">
