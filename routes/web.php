@@ -24,4 +24,5 @@ Route::middleware(['auth',])->group(function () {
   Route::get('logs', 'HomeController@logs')->name('logs');
   Route::resource('roles',   'RolesController');
 
+  Route::post('pago','PagoController@store')->name('pago.store');
 });
