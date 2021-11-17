@@ -129,16 +129,116 @@
                           </label>
                         </div>
                       </td>
+                      <td>
+                        Ver Vivienda<br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="VerVivienda" {{ $role->hasPermissionTo('VerVivienda') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        Agregar Vivienda</br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="RegistrarVivienda" {{ $role->hasPermissionTo('RegistrarVivienda') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        Editar Vivienda</br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="EditarVivienda" {{ $role->hasPermissionTo('EditarVivienda') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        Eliminar Vivienda</br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="EliminarVivienda" {{ $role->hasPermissionTo('EliminarVivienda') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
+                       <td>
+                        Ver Servicios<br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="VerServicio" {{ $role->hasPermissionTo('VerServicio') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
                    </tr>  
+                   <tr>
+                    
+                    <td>
+                      Agregar Servicio</br>
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox" name="permissions[]" value="RegistrarServicio" {{ $role->hasPermissionTo('RegistrarServicio') ? 'checked' : '' }}>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      Editar Servicio<br>
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox" name="permissions[]" value="EditarServicio" {{ $role->hasPermissionTo('EditarServicio') ? 'checked' : '' }}>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      Eliminar Servicio</br>
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox" name="permissions[]" value="EliminarServicio" {{ $role->hasPermissionTo('EliminarServicio') ? 'checked' : '' }}>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      Ver Pago</br>
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox" name="permissions[]" value="VerPago" {{ $role->hasPermissionTo('VerPago') ? 'checked' : '' }}>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      Registrar Pago</br>
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox" name="permissions[]" value="RegistrarPago" {{ $role->hasPermissionTo('RegistrarPago') ? 'checked' : '' }}>
+                        </label>
+                      </div>
+                    </td>
+                     <td>
+                      Editar Pago<br>
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox" name="permissions[]" value="EditarPago" {{ $role->hasPermissionTo('EditarPago') ? 'checked' : '' }}>
+                        </label>
+                      </div>
+                    </td>
+                   </tr>
+                   <tr>
+                    <td>
+                      Eliminar Pago<br>
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox" name="permissions[]" value="EliminarPago" {{ $role->hasPermissionTo('EliminarPago') ? 'checked' : '' }}>
+                        </label>
+                      </div>
+                   </tr>
                   </table>
-                  <div class="form-group pading">
+                 <!-- <div class="form-group pading">
                      <label for="name">Contraseña actual</label>
                      <input type="password" class="form-control" id="current_password" name="current_password" placeholder="Contraseña actual">
                      <span class="missing_alert text-danger" id="current_password_alert"></span>
                     </div>
                     <button type="submit" class="btn blue darken-4 text-white ajax" id="submit">
                       <i id="ajax-icon" class="fa fa-edit"></i> Editar
-                    </button>
+                    </button> -->
               </form>
             </div>
           </div>

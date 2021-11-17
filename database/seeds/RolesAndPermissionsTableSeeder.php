@@ -75,7 +75,6 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                     'VerPago',
                                     'RegistrarPago',
                                     'EditarPago',
-                                    'EliminarPago',
 
 
                                     ];
