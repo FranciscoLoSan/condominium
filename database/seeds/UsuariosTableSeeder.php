@@ -41,6 +41,6 @@ class UsuariosTableSeeder extends Seeder
         $user->status   = 1; // (1) active (0)disabled
         $user->save();
 
-        $user->assignRole('Usuario');
+        $user->assignRole('Inquilino');
     }
 }

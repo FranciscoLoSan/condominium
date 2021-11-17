@@ -6,7 +6,7 @@ use Spatie\Permission\Models\Permission;
 
 class RolesAndPermissionsTableSeeder extends Seeder
 {
-   private $permissions , $user_permissions;
+   private $permissions , $inquilion_permissions;
 
 
     public function __construct()
@@ -54,6 +54,12 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                'EditarServicio',
                                'EliminarServicio',
 
+                               /* Pagos */
+                               'VerPago',
+                               'RegistrarPago',
+                               'EditarPago',
+                               'EliminarPago',
+
 
                               ];
 
@@ -62,8 +68,14 @@ class RolesAndPermissionsTableSeeder extends Seeder
         set the permissions for the user role, by default
         role admin we will assign all the permissions
         */
-        $this->user_permissions = [
-                                    'VerUsuario'
+        $this->inquilion_permissions = [
+                                    'VerUsuario',
+                                    'EditarUsuario',
+
+                                    'VerPago',
+                                    'RegistrarPago',
+                                    'EditarPago',
+                                    'EliminarPago',
 
 
                                     ];
@@ -89,8 +101,8 @@ class RolesAndPermissionsTableSeeder extends Seeder
         $role->givePermissionTo($this->permissions);
 
         // create the user role and set all user permissions
-        $role = Role::create(['name' => 'Usuario']);
-        $role->givePermissionTo($this->user_permissions);
+        $role = Role::create(['name' => 'Inquilino']);
+        $role->givePermissionTo($this->inquilion_permissions);
 
     }
 }

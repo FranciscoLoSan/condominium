@@ -105,7 +105,7 @@
                 <label  for="role">Tipo de usuario</label>
                 <div class="checkbox icheck">
                   <label class="font-weight-bolder">
-                    <input type="radio" name="role" value="Usuario" checked> Usuario&nbsp;&nbsp;
+                    <input type="radio" name="role" value="Inquilino" checked> Inquilino&nbsp;&nbsp;
                     <input type="radio" name="role" value="Administrador"> Administrador
                   </label>
                 </div>

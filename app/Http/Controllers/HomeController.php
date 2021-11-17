@@ -9,7 +9,9 @@ use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Auth;
 use App\Servicio;
+use App\Pago;
 use App\Helper;
+use App\Vivienda;
 
 class HomeController extends Controller
 {
@@ -60,8 +62,18 @@ class HomeController extends Controller
             $fecha = now()->toDateString();
             $year = substr($fecha,0,4);
             $mes = substr($fecha,5,2);
+
+            $pago = Pago::whereYear('created_at',$year)->whereMonth('created_at',$mes)->where('user_id',Auth::id())->first();
+            $vivienda = Vivienda::where('user_id',Auth::id())->first();
+
+            if($mes == 1){
+                $mes = 12;
+                $year--;
+            }
+
+            $mes--;
             $servicios = Servicio::select(['nombre','descripcion','costo'])->whereYear('created_at',$year)->whereMonth('created_at',$mes)->get();
-            return view('inquilino.index',['servicios'=>$servicios,'numInquilinos'=>$numInquilinos]);
+            return view('inquilino.index',['servicios'=>$servicios,'numInquilinos'=>$numInquilinos,'pago'=>$pago,'vivienda'=>$vivienda]);
         }
 
         return view('admin.home.index', compact('emp_count_1',

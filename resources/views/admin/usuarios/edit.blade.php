@@ -133,7 +133,7 @@
                 <label for="role">Tipo de usuario</label>
                 <div class="checkbox icheck">
                   <label>
-                    <input type="radio" name="role" value="Usuario" {{ $user->hasRole('Usuario') ? 'checked' : '' }}> Usuario&nbsp;&nbsp;
+                    <input type="radio" name="role" value="Usuario" {{ $user->hasRole('Inquilino') ? 'checked' : '' }}> Inquilino&nbsp;&nbsp;
                     <input type="radio" name="role" value="Administrador" {{ $user->hasRole('Administrador') ? 'checked' : '' }}> Administrador
                   </label>
                 </div>

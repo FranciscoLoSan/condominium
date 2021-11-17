@@ -71,7 +71,7 @@
                       @endif
 
 
-                    <td>{!! $user->hasRole('Administrador') ? '<b>Administrador</b>' : 'Usuario' !!}</td>
+                    <td>{!! $user->hasRole('Administrador') ? '<b>Administrador</b>' : 'Inquilino' !!}</td>
                     <td>{{ $user->email  }}</td>
                     <td><span class="badge text-white {{ $user->status ? 'badge-success' : 'badge-danger' }}">{{ $user->display_status }}</span></td>
                     <td>

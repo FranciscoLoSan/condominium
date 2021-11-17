@@ -23,11 +23,6 @@ Route::middleware(['auth',])->group(function () {
   Route::resource('permission', 'PermissionController');
   Route::get('logs', 'HomeController@logs')->name('logs');
   Route::resource('roles',   'RolesController');
-<<<<<<< HEAD
   Route::resource('vivienda', 'ViviendaController');
   Route::resource('servicio', 'ServicioController');
-=======
-
-  Route::post('pago','PagoController@store')->name('pago.store');
->>>>>>> 484a92ca68f74cc58496104d99321a888fee4ff2
 });
