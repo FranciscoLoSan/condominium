@@ -54,7 +54,7 @@
                     <tbody>
                     @foreach ($pagos as $pago)
                     <td>{{ $pago->user->name.' '.$pago->user->lastname }}</td>
-                    <td>{{ $pago->monto }}</td>
+                    <td>${{ number_format($pago->monto,2)}}</td>
                     <td><img src="{{asset('storage').'/'.$pago->ticket}}" style="width: 200px;"></td>
                     <td>
                       @switch($pago->estatus)

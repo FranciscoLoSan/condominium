@@ -23,6 +23,12 @@
       </div>
 
 
+      <div class="form-group pading">
+        <label class="font-weight-bolder" for="numero">Monto</label>
+        <input class="form-control" style="font-size: 15px;" id="nombre" name="nombre" value="${{ number_format($pago->monto,2)}}" disabled>
+        <span class="missing_alert text-danger" id="numero_alert"></span>
+      </div>
+
       <div class="form-group">
         <label class="font-weight-bolder" for="estatus" >Estatus</label>
         <select class="form-control" id="estatus" name="estatus" disabled>
