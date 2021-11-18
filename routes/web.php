@@ -25,4 +25,6 @@ Route::middleware(['auth',])->group(function () {
   Route::resource('roles',   'RolesController');
   Route::resource('vivienda', 'ViviendaController');
   Route::resource('servicio', 'ServicioController');
+  
+  Route::post('pago','PagoController@store')->name('pago.store');
 });

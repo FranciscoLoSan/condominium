@@ -12,11 +12,7 @@ class Vivienda extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-<<<<<<< HEAD
         'id', 'numero', 'domicilio', 'descripcion', 'user_id', 
-=======
-        'numero', 'domicilio', 'decripcion', 'latitud', 'longitud', 'user_id', 'servicio_id'
->>>>>>> origin/rama_esteban
     ];
 
     protected $hidden = [];

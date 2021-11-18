@@ -57,11 +57,12 @@ class HomeController extends Controller
         $log->save();
 
 
-        if(Auth::user()->hasRole('Usuario')){
+        if(Auth::user()->hasRole('Inquilino')){
             $numInquilinos = Helper::getInquilinos();
             $fecha = now()->toDateString();
             $year = substr($fecha,0,4);
             $mes = substr($fecha,5,2);
+
 
             $pago = Pago::whereYear('created_at',$year)->whereMonth('created_at',$mes)->where('user_id',Auth::id())->first();
             $vivienda = Vivienda::where('user_id',Auth::id())->first();
@@ -70,6 +71,7 @@ class HomeController extends Controller
                 $mes = 12;
                 $year--;
             }
+
 
             $mes--;
             $servicios = Servicio::select(['nombre','descripcion','costo'])->whereYear('created_at',$year)->whereMonth('created_at',$mes)->get();
