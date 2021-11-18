@@ -40,6 +40,12 @@
                 <span class="missing_alert text-danger" id="numero_alert"></span>
               </div>
 
+              <div class="form-group pading">
+                <label class="font-weight-bolder" for="numero">Monto</label>
+                <input class="form-control" style="font-size: 15px;" id="nombre" name="nombre" value="{{$pago->monto}}" disabled>
+                <span class="missing_alert text-danger" id="numero_alert"></span>
+              </div>
+
 
               <div class="form-group">
                 <label class="font-weight-bolder" for="estatus">Estatus</label>
@@ -70,8 +76,6 @@
               </div>
 
               <img class="mb-5" src="{{asset('storage').'/'.$pago->ticket}}" style="width: 100%;">
-
-              
 
               <div class="box-footer">
               <button type="submit" class="btn blue darken-4 text-white  ajax" id="submit">

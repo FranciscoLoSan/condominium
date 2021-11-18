@@ -5,6 +5,7 @@
             <form role="form" id="main-form" class="col-md-6" autocomplete="off" method="POST" action="{{route('pago.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
+                    <input type="hidden" class="form-control" name="monto" value="{{number_format($total,2)}}">
                     <label for="formFile" class="form-label">Enviar Imagen Del Ticket</label>
                     <input class="form-control" name="ticket" type="file" id="formFile">
                 </div>
@@ -18,6 +19,7 @@
                 <label for="formFile" class="form-label">Enviar Imagen Del Ticket</label>
                 <input class="form-control" name="ticket" type="file" id="formFile">
             </div>
+            <input type="hidden" class="form-control" name="monto" value="{{number_format($total,2)}}">
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     @endif

@@ -6,8 +6,6 @@
 
 
 @section('content')
-
-   
       <div class="container">
         <div class="col-md-6">
           <div class="btn-group">
@@ -23,7 +21,6 @@
           <div class="card card-line-primary">
             <div class="card-header">
               <h5 >Listado de pagos</h5>
-             
             </div>
              <!-- /.card-header -->
                 <div class="card-body table-responsive">
@@ -48,6 +45,7 @@
                     <thead>
                     <tr>
                     <th>Nombre</th>
+                    <th>Monto</th>
                     <th>Foto</th>
                     <th>Estatus</th>
                     <th>Opciones</th> 
@@ -56,6 +54,7 @@
                     <tbody>
                     @foreach ($pagos as $pago)
                     <td>{{ $pago->user->name.' '.$pago->user->lastname }}</td>
+                    <td>{{ $pago->monto }}</td>
                     <td><img src="{{asset('storage').'/'.$pago->ticket}}" style="width: 200px;"></td>
                     <td>
                       @switch($pago->estatus)
@@ -86,10 +85,5 @@
             </div>
         </div>
       </div>
-      
-   
-
-
-
 @endsection
 
