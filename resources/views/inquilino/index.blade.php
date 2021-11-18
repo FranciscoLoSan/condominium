@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-12">
                         <label class="form-label">Descripción</label>
-                        <input type="text" class="form-control" value="{{$vivienda->decripcion}}" disabled>
+                        <input type="text" class="form-control" value="{{$vivienda->descripcion}}" disabled>
                         </div>
                     </form>
                     <br>
