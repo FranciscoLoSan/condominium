@@ -5,6 +5,8 @@
 <section class="container">
     <div class="col-sm-12">
 
+        <?php $total = 0 ?>
+        
         @if ($pago)
             @switch($pago->estatus)
                 @case(0)

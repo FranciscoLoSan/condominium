@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Pago;
 
 class PagoController extends Controller
@@ -15,6 +16,7 @@ class PagoController extends Controller
     public function index()
     {
         // return Pago::all();
+        
         return view('admin.pagos.index',['pagos'=>Pago::all()]);
     }
 
@@ -37,6 +39,32 @@ class PagoController extends Controller
     public function store(Request $request)
     {
         //
+
+        $campos = [
+            'ticket'=>'required|mimes:jpeg,png,jpg',
+        ];
+
+
+        $fecha = now()->toDateString();
+        $year = substr($fecha,0,4);
+        $mes = substr($fecha,5,2);
+
+        $pago = Pago::whereYear('created_at',$year)->whereMonth('created_at',$mes)->where('user_id',Auth::id())->first();
+
+
+        if($request->hasFile('ticket')){
+            $ticket=$request->file('ticket')->store('uploads','public');
+        } else {
+            $ticket="";
+        }
+
+        if($pago){
+            $pago->delete();
+        }
+
+        Pago::insert(['user_id'=>Auth::id(),'ticket'=>$ticket,'created_at'=>now(),'monto'=>$request->monto]);
+
+        return redirect('/');
     }
 
     /**
@@ -84,35 +112,5 @@ class PagoController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    public function subirPago(Request $request)
-    {
-        $campos = [
-            'ticket'=>'required|mimes:jpeg,png,jpg',
-        ];
-
-
-        $fecha = now()->toDateString();
-        $year = substr($fecha,0,4);
-        $mes = substr($fecha,5,2);
-
-        $pago = Pago::whereYear('created_at',$year)->whereMonth('created_at',$mes)->where('user_id',Auth::id())->first();
-
-
-        if($request->hasFile('ticket')){
-            $ticket=$request->file('ticket')->store('uploads','public');
-        } else {
-            $ticket="";
-        }
-
-        if($pago){
-            $pago->delete();
-        }
-
-        Pago::insert(['user_id'=>Auth::id(),'ticket'=>$ticket,'created_at'=>now()]);
-
-        return redirect('/');
     }
 }

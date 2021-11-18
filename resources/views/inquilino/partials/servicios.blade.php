@@ -18,6 +18,7 @@
 
             <td>${{$costo = number_format(($servicio->costo)/$numInquilinos,2)}}</td>
 
+
             <?php
                 $total=($servicio->costo)/$numInquilinos;
             ?>

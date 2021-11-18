@@ -28,5 +28,4 @@ Route::middleware(['auth',])->group(function () {
 
   Route::resource('pago', 'PagoController');
   
-  Route::post('subir-pago','PagoController@store')->name('pago.subirPago');
 });
