@@ -1,6 +1,7 @@
 <!-- Brand Logo -->
 <a href="{{ url('/') }}" class="brand-link">
-      <img src="{{ asset('images/logo/logo-hexagono.png') }}" alt="AdminLTE Logo" class="brand-image img-circle " style="opacity: .8">
+      {{-- <img src="{{ asset('images/logo/logo-hexagono.png') }}" alt="AdminLTE Logo" class="brand-image img-circle " style="opacity: .8"> --}}
+      <i class="fas fa-laptop-house"></i>
       <span class="brand-text font-weight-light">LARADMIN</span>
     </a>
 <div class="sidebar">

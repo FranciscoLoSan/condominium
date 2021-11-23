@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'pagos')
-@section('page_title', 'pagos')
+@section('page_title', 'Pagos')
 
 
 
@@ -31,13 +31,8 @@
                       </a>
                     </li>
                    <li class="list-inline-item">
-                      <a href="/pagos" class="link_ruta">
-                        Listado &nbsp; &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                   <li class="list-inline-item">
-                      <a href="/pagos/create" class="link_ruta">
-                        Nuevo
+                      <a href="{{route('pago.index')}}" class="link_ruta">
+                        Listado &nbsp; &nbsp;</i>
                       </a>
                     </li>
                   </ul><br>
