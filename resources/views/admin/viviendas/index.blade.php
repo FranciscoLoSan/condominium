@@ -56,7 +56,11 @@
                     </thead>
                     <tbody>
                     @foreach ($vivienda as $viviendaData)
-                    <td>{{ $viviendaData->user_id }}</td>
+                    <td>@foreach ($user as $userData)
+                        @if($userData->id == $viviendaData->user_id)
+                          {{$userData->name}} {{$userData->lastname}}
+                        @endif
+                    @endforeach</td>
                     <td>{{ $viviendaData->numero }}</td>
                     <td>{{ $viviendaData->domicilio}}</td>
                     <td>{{ $viviendaData->descripcion }}</td>

@@ -40,10 +40,12 @@
                   <label for="exampleFormControlSelect1">Asignar inquilino</label>
                   <select class="form-control" id="user_id" name="user_id">
                   @foreach ($user as $userData)
+                  @if( $userData->hasRole('Inquilino'))
                     @if ($vivienda->user_id == $userData->id)
                     <option value="{{ $userData->id }}" selected>{{ $userData->name }} {{ $userData->lastname }}</option>
-                  @else
-                  <option value="{{ $userData->id }}" selected>{{ $userData->name }} {{ $userData->lastname }}</option>                  
+                    @else
+                    <option value="{{ $userData->id }}" selected>{{ $userData->name }} {{ $userData->lastname }}</option>                  
+                    @endif
                   @endif
                   @endforeach
                   </select>
