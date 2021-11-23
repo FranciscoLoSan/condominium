@@ -113,11 +113,8 @@
 
         <!-- Main Footer -->
        <footer class="main-footer">
-        <strong>Copyright &copy; 2021 <a target="_blank" href="https://instagram.com/theizerg_"> Theizer González</a> Desarrollador - Development.</strong>
+        <strong>Copyright &copy; 2021 <a target="_blank" href="https://instagram.com/theizerg_">Grupo Mexa</a> Desarrolladores - Development.</strong>
         Todos los derechos reservados.
-        <div class="float-right d-none d-sm-inline-block">
-         <img src="{{asset('images/vendor/admin-lte/plugins/flag-icon-css/flags/4x3/ve.svg')}}" alt="AdminLTE Logo" height="20" style="opacity: .8">
-        </div>
        </footer>
 
         <!-- Control Sidebar -->
