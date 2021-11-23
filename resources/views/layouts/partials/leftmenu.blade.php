@@ -115,6 +115,15 @@
             </a>
           </li>
           @endcan
+
+          @can('VerVivienda')
+          <li class="nav-item">
+            <a href="/pago" class="nav-link">
+              <i class="mdi mdi-light-switch nav-icon red-text"></i>
+              <p>Pagos</p>
+            </a>
+          </li>
+          @endcan
         </ul>
       </li>
        @if (auth()->user()->hasRole('Usuario') )
