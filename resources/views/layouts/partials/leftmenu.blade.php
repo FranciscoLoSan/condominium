@@ -102,7 +102,8 @@
             @can('VerVivienda')
           <li class="nav-item">
             <a href="/vivienda" class="nav-link">
-              <i class="mdi mdi-light-switch nav-icon red-text"></i>
+              <i class="fas fa-home nav-icon green-text"></i>
+              {{-- <i class="mdi mdi-light-switch nav-icon red-text"></i> --}}
               <p>Viviendas</p>
             </a>
           </li>
@@ -110,7 +111,8 @@
           @can('VerVivienda')
           <li class="nav-item">
             <a href="/servicio" class="nav-link">
-              <i class="mdi mdi-light-switch nav-icon red-text"></i>
+              <i class="fas fa-hammer nav-icon green-text"></i>
+              {{-- <i class="mdi mdi-light-switch nav-icon red-text"></i> --}}
               <p>Servicios</p>
             </a>
           </li>
@@ -119,7 +121,8 @@
           @can('VerVivienda')
           <li class="nav-item">
             <a href="/pago" class="nav-link">
-              <i class="mdi mdi-light-switch nav-icon red-text"></i>
+              <i class="fas fa-comments-dollar nav-icon green-tex"></i>
+              {{-- <i class="mdi mdi-light-switch nav-icon red-text"></i> --}}
               <p>Pagos</p>
             </a>
           </li>
