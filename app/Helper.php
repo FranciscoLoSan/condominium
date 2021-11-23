@@ -59,6 +59,30 @@ class Helper
     }
 
 
+    static function getDeudores(){
+
+        $fecha = now()->toDateString();
+        $year = substr($fecha,0,4);
+        $mes = substr($fecha,5,2);
+
+        
+        if($mes == 1){
+            $mes = 12;
+            $year--;
+        } else {
+            $mes--;
+        }
+
+        $sql = 'SELECT COUNT(*) deudores 
+                FROM users us
+                INNER JOIN viviendas vi
+                ON us.id = vi.user_id
+                WHERE us.id NOT IN (SELECT user_id FROM pagos WHERE pagos.estatus = 1 AND MONTH(pagos.created_at) = :mes AND YEAR(pagos.created_at) = :year)';
+
+        $deudores = DB::select($sql,['mes'=>$mes,'year'=>$year]);
+
+        return $deudores[0]->deudores;
+    }
     // static function getServicioTotal(){
     //     $fecha = now()->toDateString();
     //     $year = substr($fecha,0,4);

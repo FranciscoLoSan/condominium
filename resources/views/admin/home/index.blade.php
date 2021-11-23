@@ -50,7 +50,8 @@
             <!-- small box -->
             <div class="small-box orange darken-3 text-white">
                   <div class="inner">
-                    <h3> {{App\Models\Log\LogSistema::count()}}</h3>
+                    {{-- <h3> {{App\Models\Log\LogSistema::count()}}</h3> --}}
+                    <h3>{{App\Helper::getDeudores()}}</h3>
 
                     <p>Deudores.</p>
                   </div>

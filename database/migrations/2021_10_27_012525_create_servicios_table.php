@@ -20,8 +20,8 @@ class CreateServiciosTable extends Migration
             $table->string('nombre', 50);
             $table->text('descripcion');
             $table->double('costo');
-            $table->integer('vivienda_id')->unsigned();
-            $table->foreign('vivienda_id')->references('id')->on('viviendas');
+            // $table->integer('vivienda_id')->unsigned();
+            // $table->foreign('vivienda_id')->references('id')->on('viviendas');
             $table->timestamps();
         });
     }

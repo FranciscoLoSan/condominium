@@ -39,7 +39,6 @@ class PagoController extends Controller
     public function store(Request $request)
     {
         //
-
         $campos = [
             'ticket'=>'required|mimes:jpeg,png,jpg',
         ];

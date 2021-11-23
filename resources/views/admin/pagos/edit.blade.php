@@ -19,7 +19,7 @@
       <div class="col-md-12">
         <div class="card card-line-primary">
            <div class="card-header  ">
-              <h5 >Editar Usuario</h5>
+              <h5 >Editar Pago</h5>
              
             </div>
           <div class="card-body">

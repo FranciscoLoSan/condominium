@@ -19,7 +19,7 @@
                 <label for="formFile" class="form-label">Enviar Imagen Del Ticket</label>
                 <input class="form-control" name="ticket" type="file" id="formFile">
             </div>
-            <input type="hidden" class="form-control" name="monto" value="{{number_format($total,2)}}">
+            <input type="hidden" class="form-control" name="monto" value="{{$total}}">
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     @endif
