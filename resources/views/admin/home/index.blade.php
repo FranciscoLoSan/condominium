@@ -26,10 +26,10 @@
                   <div class="inner">
                     <h3>{{Spatie\Permission\Models\Role::count()}}</h3>
 
-                    <p>Roles registrados.</p>
+                    <p>Efectivo Ingresado.</p>
                   </div>
                     <div class="icon">
-                       <i class="fas fa-lock"></i>
+                        <i class="fas fa-money-bill-alt"></i>
                     </div>
               </div>
           </div>
@@ -39,10 +39,10 @@
                   <div class="inner">
                     <h3>{{Spatie\Permission\Models\Permission::count()}}</h3>
 
-                    <p>Permisos registrados.</p>
+                    <p>Gastos.</p>
                   </div>
                     <div class="icon">
-                       <i class="fas fa-lock-open"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
               </div>
           </div>
@@ -52,10 +52,10 @@
                   <div class="inner">
                     <h3> {{App\Models\Log\LogSistema::count()}}</h3>
 
-                    <p>Histórico del sistema.</p>
+                    <p>Deudores.</p>
                   </div>
                     <div class="icon">
-                       <i class="fas fa-file-archive"></i>
+                        <i class="fas fa-user-times"></i>
                     </div>
               </div>
           </div>

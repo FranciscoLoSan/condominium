@@ -46,7 +46,9 @@
                     <h4>LARADMIN</h4>
                   </div>
                     <div class="card-body px-lg-5 py-lg-5 text-white  text-center">
-                        <i class="mdi mdi-laptop fa-7x"></i>
+                        {{-- <i class="mdi mdi-laptop fa-7x"></i> --}}
+                        <i class="mdi fa-laptop-house fa-7x"></i>
+                        <i class="fas fa-laptop-house fa-7x"></i>
                         <p class="text-muted text-white">Sistema desarrollado para iniciar proyectos en Laravel.</p>
                         
                     </div>
