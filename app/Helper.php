@@ -36,14 +36,6 @@ class Helper
         $year = substr($fecha,0,4);
         $mes = substr($fecha,5,2);
 
-        
-        if($mes == 1){
-            $mes = 12;
-            $year--;
-        } else {
-            $mes--;
-        }
-        
         $sumaEfectivo = Pago::whereYear('created_at',$year)->whereMonth('created_at',$mes)->where('estatus',1)->get()->sum('monto');
 
         return $sumaEfectivo;
@@ -64,14 +56,6 @@ class Helper
         $fecha = now()->toDateString();
         $year = substr($fecha,0,4);
         $mes = substr($fecha,5,2);
-
-        
-        if($mes == 1){
-            $mes = 12;
-            $year--;
-        } else {
-            $mes--;
-        }
 
         $sql = 'SELECT COUNT(*) deudores 
                 FROM users us
