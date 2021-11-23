@@ -47,6 +47,7 @@
                 <table  class="display table table-striped " style="width:100%">
                     <thead>
                     <tr>
+                    <th>Inquilino</th>
                     <th>Numero</th>
                     <th>Domicilio</th>
                     <th>Descripcion</th>
@@ -55,6 +56,7 @@
                     </thead>
                     <tbody>
                     @foreach ($vivienda as $viviendaData)
+                    <td>{{ $viviendaData->user_id }}</td>
                     <td>{{ $viviendaData->numero }}</td>
                     <td>{{ $viviendaData->domicilio}}</td>
                     <td>{{ $viviendaData->descripcion }}</td>

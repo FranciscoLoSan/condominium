@@ -51,13 +51,13 @@
               @csrf
             <div class="card-body">
               <div class="form-group">
-                <label for="exampleFormControlSelect1">Asignar vivienda</label>
+                <!-- <label for="exampleFormControlSelect1">Asignar vivienda</label>
                 <select class="form-control" id="vivienda_id" name="vivienda_id">
-                @foreach ($vivienda as $viviendaData)
+                {{--@foreach ($vivienda as $viviendaData)
                   <option value="{{ $viviendaData->id }}">{{ $viviendaData->numero}} {{$viviendaData->domicilio}}</option>
-                @endforeach
+                @endforeach--}}
                 </select>
-              </div>
+              </div> -->
 
               <div class="form-group pading">
                 <label class="font-weight-bolder" for="numero">Nombre</label>

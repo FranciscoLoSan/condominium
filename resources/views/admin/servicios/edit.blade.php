@@ -37,16 +37,16 @@
                 @csrf
               <div class="card-body">
                 <div class="form-group">
-                  <select class="form-control" id="vivienda_id" name="vivienda_id">
-                    @foreach ($vivienda as $viviendaData)
+                 <!-- <select class="form-control" id="vivienda_id" name="vivienda_id">
+                   {{-- @foreach ($vivienda as $viviendaData)
                       @if ($servicio->vivienda_id == $viviendaData->id)
                       <option value="{{ $viviendaData->id }}">{{ $viviendaData->numero}} {{$viviendaData->domicilio}}</option>
                     @else
                     <option value="{{ $viviendaData->id }}">{{ $viviendaData->numero}} {{$viviendaData->domicilio}}</option>                
                     @endif
-                    @endforeach
+                    @endforeach--}}
                     </select>
-                </div>
+                </div>-->
   
                 <div class="form-group pading">
                   <label class="font-weight-bolder" for="numero">Nombre</label>
