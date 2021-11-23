@@ -20,8 +20,9 @@ class ViviendaController extends Controller
 
 
         $vivienda = AppVivienda::get();
+        $user = User::get();
 
-        return view('admin.viviendas.index', ['vivienda' => $vivienda]);
+        return view('admin.viviendas.index', ['vivienda' => $vivienda], ['user' => $user]);
     }
 
 
@@ -37,8 +38,10 @@ class ViviendaController extends Controller
         . date('H:m:i').' del día: '.date('d/m/Y');
         $log->save();
         $user = User::get();
+        $vivienda = AppVivienda::get();
+        
 
-        return view('admin.viviendas.create', ['user' => $user]);
+        return view('admin.viviendas.create', ['vivienda' => $vivienda], ['user' => $user]);
     }
 
 

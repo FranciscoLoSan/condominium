@@ -34,7 +34,7 @@
                   </a>
                 </li>
                <li class="list-inline-item">
-                  <a href="/user" class="link_ruta">
+                  <a href="/viviendas" class="link_ruta">
                     Listado &nbsp; &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
                   </a>
                 </li>
@@ -53,12 +53,15 @@
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Asignar inquilino</label>
                 <select class="form-control" id="user_id" name="user_id">
-                @foreach ($user as $userData)
-                  <option value="{{ $userData->id }}">{{ $userData->name}} {{$userData->lastname}}</option>
+                  
+                  @foreach ($user as $userData)
+                  @if( $userData->hasRole('Inquilino'))
+                            <option value="{{ $userData->id }}">{{ $userData->name}} {{$userData->lastname}}</option> 
+                @endif
                 @endforeach
                 </select>
               </div>
-
+              
               <div class="form-group pading">
                 <label class="font-weight-bolder" for="numero">Numero</label>
                 <input class="form-control" style="font-size: 15px;" id="numero" name="numero" placeholder="Numero">
