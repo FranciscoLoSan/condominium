@@ -24,7 +24,8 @@
             <!-- small box -->
             <div class="small-box green darken-3 text-white">
                   <div class="inner">
-                    <h3>{{Spatie\Permission\Models\Role::count()}}</h3>
+                    {{-- <h3>{{Spatie\Permission\Models\Role::count()}}</h3> --}}
+                    <h3>${{number_format(App\Helper::getEfectivoIngresado(),2)}}</h3>
 
                     <p>Efectivo Ingresado.</p>
                   </div>
@@ -37,8 +38,7 @@
             <!-- small box -->
             <div class="small-box purple darken-3 text-white">
                   <div class="inner">
-                    <h3>{{Spatie\Permission\Models\Permission::count()}}</h3>
-
+                    <h3>${{number_format(App\Helper::getServicioTotal(),2)}}</h3>
                     <p>Gastos.</p>
                   </div>
                     <div class="icon">

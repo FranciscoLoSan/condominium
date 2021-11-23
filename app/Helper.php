@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Pago;
+use App\Servicio;
 
 
 class Helper
@@ -28,4 +30,41 @@ class Helper
         $count = DB::select($sql);
         return $count[0]->total;
     }
+
+    static function getEfectivoIngresado(){
+        $fecha = now()->toDateString();
+        $year = substr($fecha,0,4);
+        $mes = substr($fecha,5,2);
+
+        
+        if($mes == 1){
+            $mes = 12;
+            $year--;
+        } else {
+            $mes--;
+        }
+        
+        $sumaEfectivo = Pago::whereYear('created_at',$year)->whereMonth('created_at',$mes)->where('estatus',1)->get()->sum('monto');
+
+        return $sumaEfectivo;
+    }
+
+    static function getServicioTotal(){
+        $fecha = now()->toDateString();
+        $year = substr($fecha,0,4);
+        $mes = substr($fecha,5,2);
+        
+        $sumaEfectivo = Servicio::whereYear('created_at',$year)->whereMonth('created_at',$mes)->get()->sum('costo');
+        return $sumaEfectivo;
+    }
+
+
+    // static function getServicioTotal(){
+    //     $fecha = now()->toDateString();
+    //     $year = substr($fecha,0,4);
+    //     $mes = substr($fecha,5,2);
+        
+    //     $sumaEfectivo = Servicio::whereYear('created_at',$year)->whereMonth('created_at',$mes)->get()->sum('costo');
+    //     return $sumaEfectivo;
+    // }
 }

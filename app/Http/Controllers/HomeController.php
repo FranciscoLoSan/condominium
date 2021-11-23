@@ -70,10 +70,10 @@ class HomeController extends Controller
             if($mes == 1){
                 $mes = 12;
                 $year--;
+            } else {
+                $mes--;
             }
 
-
-            $mes--;
             $servicios = Servicio::select(['nombre','descripcion','costo'])->whereYear('created_at',$year)->whereMonth('created_at',$mes)->get();
             return view('inquilino.index',['servicios'=>$servicios,'numInquilinos'=>$numInquilinos,'pago'=>$pago,'vivienda'=>$vivienda]);
         }
