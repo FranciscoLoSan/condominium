@@ -12,7 +12,7 @@ class Servicio extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'id', 'nombre', 'descripcion', 'costo','vivienda_id'
+        'id', 'nombre', 'descripcion', 'costo'
     ];
 
     protected $hidden = [];
