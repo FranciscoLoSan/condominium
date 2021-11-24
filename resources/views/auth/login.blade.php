@@ -43,13 +43,13 @@
             <div class="card-group">
                 <div class="card p-4 mt-5 blue darken-4 elevation-1">
                   <div class="card-header text-white text-center">
-                    <h4>LARADMIN</h4>
+                    <h4>Condominium</h4>
                   </div>
                     <div class="card-body px-lg-5 py-lg-5 text-white  text-center">
                         {{-- <i class="mdi mdi-laptop fa-7x"></i> --}}
                         <i class="mdi fa-laptop-house fa-7x"></i>
                         <i class="fas fa-laptop-house fa-7x"></i>
-                        <p class="text-muted text-white">Sistema desarrollado para iniciar proyectos en Laravel.</p>
+                        <p class="text-muted text-white">Sistema para la administracion de condominios.</p>
                         
                     </div>
                 </div><br>

@@ -2,7 +2,7 @@
 <a href="{{ url('/') }}" class="brand-link">
       {{-- <img src="{{ asset('images/logo/logo-hexagono.png') }}" alt="AdminLTE Logo" class="brand-image img-circle " style="opacity: .8"> --}}
       <i class="fas fa-laptop-house"></i>
-      <span class="brand-text font-weight-light">LARADMIN</span>
+      <span class="brand-text font-weight-light">Condominium</span>
     </a>
 <div class="sidebar">
   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
