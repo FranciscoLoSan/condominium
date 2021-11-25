@@ -85,7 +85,7 @@
                     
                     
                                 <?php
-                                    $total=($servicio->costo)/$numInquilinos;
+                                    $total+=($servicio->costo)/$numInquilinos;
                                 ?>
                             </tr>
                             @endforeach
@@ -117,7 +117,7 @@
                 
                 
                             <?php
-                                $total=($servicio->costo)/$numInquilinos;
+                                $total+=($servicio->costo)/$numInquilinos;
                             ?>
                         </tr>
                         @endforeach
