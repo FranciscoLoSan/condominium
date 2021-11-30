@@ -50,6 +50,7 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Costo</th>
+                    <td>Fecha</td>
                     <th>Opciones</th> 
                     </tr>
                     </thead>
@@ -58,6 +59,7 @@
                     <td>{{ $servicioData->nombre }}</td>
                     <td>{{ $servicioData->descripcion}}</td>
                     <td>{{ $servicioData->costo }}</td>
+                    <td> {{ $servicioData->created_at }}</td>
                     <td>
                        @can('VerServicio')
                        <a class="btn btn-round blue darken-4" href="{{ url('servicio', [$servicioData->encode_id]) }}"><i class="mdi mdi-face text-center" style="color: white;"></i> </a>
