@@ -43,6 +43,7 @@
                     <th>Monto</th>
                     <th>Foto</th>
                     <th>Estatus</th>
+                    <td>Fecha</td>
                     <th>Opciones</th> 
                     </tr>
                     </thead>
@@ -66,6 +67,7 @@
                               
                       @endswitch
                     </td>
+                    <td>{{$pago->created_at}}</td>
                     <td>
                        <a class="btn btn-round blue darken-4" href="{{ route('pago.show', [$pago->id]) }}"><i class="mdi mdi-face text-center" style="color: white;"></i> </a>
                        <a class="btn btn-round blue darken-4" href="{{ route('pago.edit', [$pago->id]) }}"><i class="mdi mdi-pencil text-center" style="color: white;"></i> </a>
