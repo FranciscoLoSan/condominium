@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Http\Requests\StoreUser;
 use App\Http\Requests\UpdateUser;
 use App\Models\Log\LogSistema;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -146,5 +147,18 @@ class UserController extends Controller
     public function autocomplete(Request $request)
     {
         return User::search($request->q)->take(10)->get();
+    }
+
+    public function getDeudores(){
+        $sql = 'SELECT * FROM users us
+                INNER JOIN model_has_roles mhr
+                on us.id = mhr.model_id
+                WHERE role_id = 2 AND 
+                us.id NOT IN (SELECT user_id FROM pagos WHERE estatus != 1)';
+
+
+        $users = DB::select($sql);
+
+        return view('admin.usuarios.deudores', ['users' => $users]);
     }
 }

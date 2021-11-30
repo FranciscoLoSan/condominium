@@ -27,5 +27,7 @@ Route::middleware(['auth',])->group(function () {
   Route::resource('servicio', 'ServicioController');
 
   Route::resource('pago', 'PagoController');
+
+  Route::get('deudores', 'UserController@getDeudores');
   
 });

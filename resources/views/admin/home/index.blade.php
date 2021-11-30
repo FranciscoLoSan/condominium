@@ -48,17 +48,19 @@
           </div>
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box orange darken-3 text-white">
-                  <div class="inner">
-                    {{-- <h3> {{App\Models\Log\LogSistema::count()}}</h3> --}}
-                    <h3>{{App\Helper::getDeudores()}}</h3>
-
-                    <p>Deudores.</p>
+            <a href="/deudores">
+                <div class="small-box orange darken-3 text-white">
+                      <div class="inner">
+                        {{-- <h3> {{App\Models\Log\LogSistema::count()}}</h3> --}}
+                        <h3>{{App\Helper::getDeudores()}}</h3>
+    
+                        <p>Deudores.</p>
+                      </div>
+                        <div class="icon">
+                            <i class="fas fa-user-times"></i>
+                        </div>
                   </div>
-                    <div class="icon">
-                        <i class="fas fa-user-times"></i>
-                    </div>
-              </div>
+            </a>
           </div>
     </div>
 

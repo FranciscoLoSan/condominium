@@ -54,6 +54,12 @@
             </a>
           </li>
           @endcan
+          <li class="nav-item">
+            <a href="/deudores" class="nav-link">
+              <i class="fas fa-user-times"></i>
+              <p>Deudores</p>
+            </a>
+          </li>
           @can('VerPermisos')
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
